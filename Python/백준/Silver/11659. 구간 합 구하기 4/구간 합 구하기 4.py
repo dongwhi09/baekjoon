@@ -1,11 +1,14 @@
 import sys
-n, m = map(int, sys.stdin.readline().split())
-l = list(map(int, sys.stdin.readline().split()))
-s = [0]
+input = sys.stdin.readline
+n, m = map(int, input().split())
+l = list(map(int, input().split()))
 sum = 0
-for i in l:
-    sum += i
-    s.append(sum)
+for i in range(len(l)):
+    sum += l[i]
+    l[i] = sum
 for _ in range(m):
-    i, j = map(int, sys.stdin.readline().split())
-    print(s[j] - s[i - 1])
+    i, j = map(int, input().split())
+    if i == 1:
+        print(l[j - 1])
+    else:
+        print(l[j - 1] - l[i - 2])
