@@ -1,7 +1,5 @@
-n = input()
-myList = list(map(int, input().split()))
-
-myMax = max(myList)
-sum = sum(myList)
-
-print(sum * 100 / myMax / int(n))
+n = int(input())
+l = list(map(int, input().split()))
+m = max(l)
+sum = sum(l)
+print(sum / n / m * 100)
