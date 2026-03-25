@@ -1,6 +1,6 @@
-a = int(input())
-b = input()
-c = 0
-for i in range(0, a):
-    c = c + int(b[i])
-print(c)
+n = int(input())
+l = list(input())
+sum = 0
+for i in l:
+    sum += int(i)
+print(sum)
