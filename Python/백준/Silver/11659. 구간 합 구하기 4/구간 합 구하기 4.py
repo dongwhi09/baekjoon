@@ -1,14 +1,12 @@
 import sys
 input = sys.stdin.readline
 n, m = map(int, input().split())
-l = list(map(int, input().split()))
-sum = 0
-for i in range(len(l)):
-    sum += l[i]
-    l[i] = sum
+numbers = list(map(int, input().split()))
+prefix_sum = [0]
+temp = 0
+for i in numbers:
+    temp += i
+    prefix_sum.append(temp)
 for _ in range(m):
     i, j = map(int, input().split())
-    if i == 1:
-        print(l[j - 1])
-    else:
-        print(l[j - 1] - l[i - 2])
+    print(prefix_sum[j] - prefix_sum[i - 1])
