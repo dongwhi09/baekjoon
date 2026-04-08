@@ -1,16 +1,15 @@
 n = int(input())
 m = int(input())
-nl = list(map(int, input().split()))
-nl.sort()
-cnt, start, end = 0, 0, len(nl) - 1
-while start < end:
-    result = nl[start] + nl[end]
-    if result > m:
-        end -= 1
-    elif result < m:
-        start += 1
+l = list(map(int, input().split()))
+l.sort()
+left, right, count = 0, len(l) - 1, 0
+while left < right:
+    if l[left] + l[right] < m:
+        left += 1
+    elif l[left] + l[right] > m:
+        right -= 1
     else:
-        cnt += 1
-        start += 1
-        end -= 1
-print(cnt)
+        count += 1
+        left += 1
+        right -= 1
+print(count)
