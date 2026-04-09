@@ -1,10 +1,9 @@
+from collections import deque
 n = int(input())
-square = 2
-while True:
-    if (n == 1 or n == 2):
-        print(n)
-        break
-    square *= 2
-    if square >= n:
-        print((n - (square // 2)) * 2)
-        break
+queue = deque()
+for i in range(1, n + 1):
+    queue.append(i)
+while len(queue) > 1:
+    queue.popleft()
+    queue.append(queue.popleft())
+print(queue[0])
