@@ -1,8 +1,7 @@
 import sys
-n = int(input())
-answer = []
-for i in range(n):
-    answer.append(int(sys.stdin.readline()))
-answer.sort()
-for i in answer:
+l = []
+for i in range(int(input())):
+    l.append(int(sys.stdin.readline()))
+l.sort()
+for i in l:
     print(i)
